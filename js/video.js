@@ -58,21 +58,23 @@ document.querySelector("#slider").addEventListener("change", function() {
 	volRange.innerHTML = (video.volume *1000) + "%";
 });
 
-// NOT DONE
-
 document.querySelector("#slower").addEventListener("click", function() {
-	video.playBackRate = video.playBackRate
-	console.log("Old Video speed is " + video.playBackRate);
-	video.playBackRate = 0.05;
-	console.log("New video speed is " + video.playBackRate);
+	console.log("Old Video speed is " + video.playbackRate);
+	rate = video.playbackRate * 0.95;
+	video.playbackRate = rate;
+	console.log("New video speed is " + video.playbackRate);
 	//figure out how to make it progressively slower with each click
 	// link to answer should be on last week's js slides
 });
 
+// NOT DONE
+
+
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log("Old Video speed is " + video.playBackRate);
-	video.playBackRate = 2.0;
-	console.log("New video speed is " + video.playBackRate);
+	console.log("Old Video speed is " + video.playbackRate);
+	rate = (video.playbackRate * .05) + video.playbackRate;
+	video.playbackRate = rate;
+	console.log("New video speed is " + video.playbackRate);
 	//figure out how to make it progressively faster with each click
 	// link to answer should be on last week's js slides
 });
