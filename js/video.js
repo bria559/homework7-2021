@@ -71,9 +71,11 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#slider").addEventListener("change", function() {
 	var volRange = document.querySelector("#volume");
-	var volRangeValue = this.value;
-	console.log(volRangeValue);
-	video_volume = volRangeValue / 1000;
-	video.volume = video_volume;
-	volRange.innerHTML = (video.volume *1000) + "%";
+	// var volRangeValue = this.value;
+	// console.log(volRangeValue);
+	// console.log(this.value)
+	// video_volume
+	video.volume = this.value / 100;
+	console.log(video.volume)
+	volRange.innerHTML = (video.volume *100) + "%";
 });
