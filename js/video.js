@@ -49,14 +49,6 @@ document.querySelector("#skip").addEventListener("click", function() {
 	}
 });
 
-document.querySelector("#slider").addEventListener("change", function() {
-	var volRange = document.querySelector("#volume");
-	var volRangeValue = document.querySelector("#slider").value;
-	console.log(volRangeValue);
-	video_volume = volRangeValue / 1000;
-	video.volume = video_volume;
-	volRange.innerHTML = (video.volume *1000) + "%";
-});
 
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Old Video speed is " + video.playbackRate);
@@ -67,9 +59,6 @@ document.querySelector("#slower").addEventListener("click", function() {
 	// link to answer should be on last week's js slides
 });
 
-// NOT DONE
-
-
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Old Video speed is " + video.playbackRate);
 	rate = (video.playbackRate * .05) + video.playbackRate;
@@ -77,4 +66,14 @@ document.querySelector("#faster").addEventListener("click", function() {
 	console.log("New video speed is " + video.playbackRate);
 	//figure out how to make it progressively faster with each click
 	// link to answer should be on last week's js slides
+});
+// NOT DONE
+
+document.querySelector("#slider").addEventListener("change", function() {
+	var volRange = document.querySelector("#volume");
+	var volRangeValue = this.value;
+	console.log(volRangeValue);
+	video_volume = volRangeValue / 1000;
+	video.volume = video_volume;
+	volRange.innerHTML = (video.volume *1000) + "%";
 });
